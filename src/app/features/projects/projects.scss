@@ -19,6 +19,13 @@
   color: var(--color-text-muted);
 }
 
+.capability-range {
+  font-size: 1rem;
+  color: var(--color-accent-gold);
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
 .section { padding: 6rem 0; }
 
 .project-grid {
@@ -53,6 +60,7 @@
   background-position: center;
   transition: transform 0.5s ease;
   border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: relative;
   
   &.bg-bk {
     background-image: url('/assets/images/projects/commercial_bk.png');
@@ -72,6 +80,36 @@
   
   &.bg-canyon {
     background-image: url('/assets/images/projects/residential_canyon.png');
+  }
+}
+
+.acreage-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(212, 175, 55, 0.95);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  
+  .acreage-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-bg-dark);
+    line-height: 1;
+  }
+  
+  .acreage-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-bg-dark);
+    font-weight: 600;
   }
 }
 
@@ -191,5 +229,138 @@
       background-image: 
         repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 77, 0, 0.05) 10px, rgba(255, 77, 0, 0.05) 20px);
     }
+  }
+}
+
+// Site Inspection Services Section
+.inspection-services-section {
+  background: linear-gradient(180deg, rgba(11, 28, 62, 0.3) 0%, rgba(11, 28, 62, 0.5) 100%);
+  
+  .services-content {
+    padding: 3rem;
+  }
+  
+  .services-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--color-text-white);
+    }
+    
+    .services-subtitle {
+      font-size: 1.1rem;
+      color: var(--color-text-muted);
+    }
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .service-item {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: rgba(212, 175, 55, 0.05);
+      border-color: rgba(212, 175, 55, 0.3);
+      transform: translateY(-4px);
+    }
+    
+    .service-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    
+    h3 {
+      font-size: 1.2rem;
+      color: var(--color-text-white);
+      margin-bottom: 0.75rem;
+    }
+    
+    p {
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+  }
+  
+  .services-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    
+    .coverage-info {
+      flex: 1;
+      
+      h4 {
+        color: var(--color-accent-gold);
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      p {
+        color: var(--color-text-muted);
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+    }
+    
+    .cta-section {
+      .btn-primary {
+        display: inline-block;
+        background: var(--color-accent-gold);
+        color: var(--color-bg-dark);
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        
+        &:hover {
+          background: #f0c040;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+      }
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2.5rem;
+  }
+  
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .services-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .inspection-services-section .services-content {
+    padding: 2rem 1.5rem;
   }
 }

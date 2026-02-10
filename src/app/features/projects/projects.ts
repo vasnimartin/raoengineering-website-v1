@@ -10,6 +10,7 @@ interface Project {
   description: string;
   scope: string;
   services: string[];
+  acreage?: number; // Optional: for land development projects
 }
 
 @Component({
@@ -27,7 +28,8 @@ export class Projects {
       image: 'bg-solana',
       description: 'Master-planned community development across 7,000 acres',
       scope: '14,000 homes, 40,000-50,000 residents, mixed-use development with schools, retail, and recreation. $1-2 billion land development investment.',
-      services: ['Land Development', 'Water Resources', 'Infrastructure Planning', 'MUD Approval', 'Environmental']
+      services: ['Land Development', 'Water Resources', 'Infrastructure Planning', 'MUD Approval', 'Environmental'],
+      acreage: 7000
     },
     {
       title: 'Elgin Business Park Expansion',
@@ -36,7 +38,8 @@ export class Projects {
       image: 'bg-elgin',
       description: 'Aerospace manufacturing facility and business park infrastructure',
       scope: '50,000+ sq ft precision manufacturing facility expansion. Site development for 80-acre business park supporting aerospace and industrial tenants.',
-      services: ['Site Development', 'Public Infrastructure', 'Utilities Design', 'Industrial Engineering']
+      services: ['Site Development', 'Public Infrastructure', 'Utilities Design', 'Industrial Engineering'],
+      acreage: 80
     },
     {
       title: 'CedarView Mixed-Use Development',

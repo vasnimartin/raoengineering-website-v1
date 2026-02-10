@@ -3,6 +3,7 @@
     <div class="header-content container">
       <h1 class="page-title">Our <span class="text-gold">Projects</span></h1>
       <p class="page-subtitle">Engineering Excellence Across Central Texas</p>
+      <p class="capability-range">From small-scale developments to master-planned communities spanning 7,000+ acres</p>
     </div>
   </header>
 
@@ -11,7 +12,14 @@
       <div class="project-grid">
         @for (project of projects; track project.title) {
         <div class="project-card glass-panel" appAnimateOnScroll>
-          <div class="project-img" [ngClass]="project.image"></div>
+          <div class="project-img" [ngClass]="project.image">
+            @if (project.acreage) {
+            <div class="acreage-badge">
+              <span class="acreage-number">{{project.acreage | number}}</span>
+              <span class="acreage-label">Acres</span>
+            </div>
+            }
+          </div>
           <div class="project-info">
             <span class="category" [class.text-gold]="project.category === 'Land Development'"
               [class.text-cyan]="project.category === 'Water Resources'"
@@ -32,6 +40,53 @@
           </div>
         </div>
         }
+      </div>
+    </div>
+  </section>
+
+  <section class="section inspection-services-section">
+    <div class="container">
+      <div class="services-content glass-panel">
+        <div class="services-header">
+          <h2>Professional <span class="text-gold">Site Inspections</span> & Planning Visits</h2>
+          <p class="services-subtitle">Comprehensive engineering oversight for projects of all scales</p>
+        </div>
+        
+        <div class="services-grid">
+          <div class="service-item" appAnimateOnScroll>
+            <div class="service-icon">📋</div>
+            <h3>Pre-Construction Assessment</h3>
+            <p>Detailed site evaluations, feasibility studies, and regulatory compliance reviews before breaking ground.</p>
+          </div>
+          
+          <div class="service-item" appAnimateOnScroll>
+            <div class="service-icon">🔍</div>
+            <h3>Progress Inspections</h3>
+            <p>Regular on-site monitoring to ensure construction adheres to approved plans, specifications, and quality standards.</p>
+          </div>
+          
+          <div class="service-item" appAnimateOnScroll>
+            <div class="service-icon">✅</div>
+            <h3>Compliance Verification</h3>
+            <p>Final inspections and certification that all work meets local, state, and federal regulations.</p>
+          </div>
+          
+          <div class="service-item" appAnimateOnScroll>
+            <div class="service-icon">📊</div>
+            <h3>Detailed Reporting</h3>
+            <p>Comprehensive documentation with photos, measurements, and recommendations for all site visits.</p>
+          </div>
+        </div>
+
+        <div class="services-footer">
+          <div class="coverage-info">
+            <h4>Texas-Wide Service Area</h4>
+            <p>Serving developments from small commercial sites to large-scale master-planned communities across Central Texas and beyond.</p>
+          </div>
+          <div class="cta-section">
+            <a href="/contact" class="btn-primary">Schedule a Site Visit</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
