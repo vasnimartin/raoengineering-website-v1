@@ -1,0 +1,29 @@
+<header class="header">
+  <div class="container header-content glass-panel">
+    <!-- Logo -->
+    <div class="logo-container">
+      <img src="assets/branding/logo_full.png" alt="RCE Logo" class="logo">
+    </div>
+
+    <!-- Mobile Toggle -->
+    <button class="mobile-toggle" (click)="toggleMenu()" [class.active]="isMobileMenuOpen"
+      aria-label="Toggle navigation">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="nav-menu" [class.open]="isMobileMenuOpen">
+      <ul>
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+            (click)="closeMenu()">Home</a></li>
+        <li><a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About Us</a></li>
+        <li><a routerLink="/services" routerLinkActive="active" (click)="closeMenu()">Services</a></li>
+        <li><a routerLink="/projects" routerLinkActive="active" (click)="closeMenu()">Projects</a></li>
+        <li><a routerLink="/contact" routerLinkActive="active" class="btn-contact" (click)="closeMenu()">Contact Us</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

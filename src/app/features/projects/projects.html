@@ -1,0 +1,38 @@
+<div class="projects-page">
+  <header class="page-header">
+    <div class="header-content container">
+      <h1 class="page-title">Our <span class="text-gold">Projects</span></h1>
+      <p class="page-subtitle">Engineering Excellence Across Central Texas</p>
+    </div>
+  </header>
+
+  <section class="section gallery-section">
+    <div class="container">
+      <div class="project-grid">
+        @for (project of projects; track project.title) {
+        <div class="project-card glass-panel" appAnimateOnScroll>
+          <div class="project-img" [ngClass]="project.image"></div>
+          <div class="project-info">
+            <span class="category" [class.text-gold]="project.category === 'Land Development'"
+              [class.text-cyan]="project.category === 'Water Resources'"
+              [class.text-orange]="project.category === 'Industrial Development' || project.category === 'Commercial Development' || project.category === 'Transportation'">
+              {{ project.category }}
+            </span>
+            <h3>{{ project.title }}</h3>
+            <p class="location">{{ project.location }}</p>
+            <p class="description">{{ project.description }}</p>
+            <div class="project-scope">
+              <strong>Scope:</strong> {{ project.scope }}
+            </div>
+            <div class="services-tags">
+              @for (service of project.services; track service) {
+              <span class="service-tag">{{ service }}</span>
+              }
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+</div>

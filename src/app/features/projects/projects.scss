@@ -1,0 +1,195 @@
+.page-header {
+  background: linear-gradient(rgba(11, 28, 62, 0.9), rgba(11, 28, 62, 0.8)), url('/assets/images/heroes/hero_main.png');
+  background-size: cover;
+  background-position: center;
+  padding: 8rem 0 4rem;
+  text-align: center;
+  margin-top: -100px;
+  padding-top: 150px;
+}
+
+.page-title {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-white);
+}
+
+.page-subtitle {
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+}
+
+.section { padding: 6rem 0; }
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+    border-color: var(--color-accent-gold);
+    
+    .project-img {
+      transform: scale(1.08);
+    }
+    
+    .category {
+      color: var(--color-accent-gold);
+    }
+  }
+}
+
+.project-img {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  
+  &.bg-bk {
+    background-image: url('/assets/images/projects/commercial_bk.png');
+  }
+  
+  &.bg-whitestone {
+    background-image: url('/assets/images/projects/residential_whitestone.png');
+  }
+  
+  &.bg-vista {
+    background-image: url('/assets/images/projects/commercial_vista.png');
+  }
+  
+  &.bg-prue {
+    background-image: url('/assets/images/projects/residential_prue.png');
+  }
+  
+  &.bg-canyon {
+    background-image: url('/assets/images/projects/residential_canyon.png');
+  }
+}
+
+.project-info {
+  padding: 1.5rem;
+  
+  .category {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  h3 {
+    font-size: 1.4rem;
+    color: var(--color-text-white);
+    margin-bottom: 0.5rem;
+  }
+  
+  .location {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    
+    &::before {
+      content: '';
+      width: 14px;
+      height: 14px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23D4AF37' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      flex-shrink: 0;
+    }
+  }
+  
+  .description {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  
+  .project-scope {
+    background: rgba(255,255,255,0.03);
+    padding: 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--color-text-muted);
+    
+    strong {
+      color: var(--color-accent-gold);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+  }
+  
+  .services-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    
+    .service-tag {
+      background: rgba(212, 175, 55, 0.1);
+      color: var(--color-accent-gold);
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+  }
+}
+
+// New project images
+.project-img {
+  &.bg-solana {
+    background-image: linear-gradient(rgba(11, 28, 62, 0.3), rgba(11, 28, 62, 0.6)), url('/assets/images/projects/residential_whitestone.png');
+  }
+  
+  &.bg-elgin {
+    background-image: linear-gradient(rgba(11, 28, 62, 0.3), rgba(11, 28, 62, 0.6)), url('/assets/images/projects/commercial_bk.png');
+  }
+  
+  &.bg-cedarview {
+    background-image: linear-gradient(rgba(11, 28, 62, 0.3), rgba(11, 28, 62, 0.6)), url('/assets/images/projects/commercial_vista.png');
+  }
+  
+  &.bg-water {
+    background: linear-gradient(135deg, #1a2c50 0%, #0b1c3e 100%);
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(212, 175, 55, 0.03) 2px, rgba(212, 175, 55, 0.03) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(212, 175, 55, 0.03) 2px, rgba(212, 175, 55, 0.03) 4px);
+    }
+  }
+  
+  &.bg-i35 {
+    background: linear-gradient(135deg, #2c1a50 0%, #1c0b3e 100%);
+    position: relative;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 77, 0, 0.05) 10px, rgba(255, 77, 0, 0.05) 20px);
+    }
+  }
+}

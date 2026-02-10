@@ -1,0 +1,411 @@
+/* Services Page - Cinematic Dossier Layout (Vertical Stack) */
+
+/* Global Page Layout (Dashboard Grid) */
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr; /* Fixed Sidebar + Fluid Content */
+  min-height: 100vh;
+  background-color: #0b0f19; /* Deepest Navy Background */
+  position: relative;
+}
+
+/* 1. Sidebar Navigation (Sticky) */
+.service-sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: 8rem 2rem 4rem 3rem; /* Top padding to clear header */
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  z-index: 50;
+  
+  .sidebar-title {
+    font-family: var(--font-heading);
+    color: var(--color-accent-gold);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+  }
+  
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    
+    a {
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      position: relative;
+      padding-left: 0;
+      
+      &:hover, &.active {
+        color: #fff;
+        padding-left: 1rem; /* Slide effect */
+        
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 4px;
+          height: 4px;
+          background: var(--color-accent-cyan);
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .sidebar-footer {
+    margin-top: auto;
+    p {
+      color: rgba(255,255,255,0.4);
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+    .btn-outline {
+      border: 1px solid var(--color-accent-gold);
+      color: var(--color-accent-gold);
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      
+      &:hover {
+        background: var(--color-accent-gold);
+        color: #000;
+      }
+    }
+  }
+}
+
+/* 2. Main Content Area (Scrollable Scenery) */
+.service-content {
+  padding: 8rem 4rem 4rem 4rem;
+  overflow-y: visible; /* Let the window scroll manage */
+}
+
+/* Cinematic Dossier - Strictly Square Media Object */
+.immersive-section {
+  display: flex;
+  flex-direction: row;
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  margin-bottom: 4rem;
+  
+  /* Top Accent Line */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-accent-gold) 0%, transparent 100%);
+    z-index: 20;
+  }
+  
+  /* A. The Visual Panel (STRICT SQUARE) */
+  .immersive-image {
+    flex: 0 0 450px; /* Rigid Width */
+    width: 450px;
+    height: 450px; /* Rigid Height -> Perfect Square */
+    position: relative;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    cursor: pointer; /* Clickable */
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Fill the square container perfectly */
+      object-position: center;
+      transition: transform 0.7s ease;
+      filter: brightness(0.95);
+      display: block;
+    }
+    
+    .image-overlay {
+      position: absolute;
+      inset: 0;
+      /* Side gradient to blend with content */
+      background: linear-gradient(to right, transparent 80%, #111827 100%);
+    }
+    
+    /* Tag overlaid on image */
+    &::after {
+      content: 'ENGINEERING DOSSIER';
+      position: absolute;
+      bottom: 2rem;
+      left: 2rem;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 2px;
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 0.4rem 1rem;
+      background: rgba(0,0,0,0.7);
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+    }
+  }
+
+  /* B. The Data Core (Specs Sheet) */
+  .immersive-content {
+    flex: 1; /* Take the rest of the space */
+    padding: 2rem; /* Reduced from 3rem */
+    position: relative;
+    z-index: 10;
+    background-color: #111827;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    /* Base Tech Grid */
+    background-image: 
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    
+    /* Watermark Container */
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.08;
+      filter: grayscale(100%) contrast(150%);
+      z-index: -1;
+      pointer-events: none;
+    }
+    
+    .content-header {
+      margin-bottom: 1.5rem; /* Reduced from 2rem */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 1rem;
+      
+      .section-title {
+        font-size: 1.8rem; /* Reduced from 2.2rem for tighter feel */
+        margin-bottom: 0;
+        color: #fff;
+        line-height: 1;
+        letter-spacing: 1px;
+        font-family: 'Oswald', sans-serif;
+        text-transform: uppercase;
+        
+        .text-highlight {
+          color: var(--color-accent-cyan);
+          font-weight: 300;
+        }
+      }
+      
+      &::after {
+        content: attr(data-id); 
+        font-family: 'Rajdhani', monospace;
+        color: var(--color-accent-gold); /* Gold for ID pop */
+        font-size: 1.1rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+      }
+    }
+    
+    .feature-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      
+      /* Context Text */
+      .feature-description .lead {
+        font-size: 0.95rem; /* Technical Manual Size */
+        line-height: 1.6;
+        color: #cbd5e1; /* Lighter slate */
+        margin-bottom: 0;
+        font-weight: 400;
+        text-align: justify; /* Newspaper alignment */
+      }
+      
+      /* Data Panel (Specs) */
+      .feature-list {
+        background: rgba(0, 0, 0, 0.3); /* Darker contrast */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 1rem;
+        border-radius: 2px; /* Sharper corners */
+        border-left: 3px solid var(--color-secondary-orange);
+        
+        .feature-item {
+          h3 { 
+            font-size: 0.7rem; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-accent-cyan);
+            margin-bottom: 0.5rem;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+          }
+          /* Treat content as a data list */
+          p { 
+            font-size: 0.85rem; 
+            color: #fff;
+            font-weight: 400;
+            line-height: 1.5;
+            margin: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 2 Column Split */
+            gap: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  /* Animations for Living Schematics */
+  @keyframes grid-pan {
+    0% { background-position: 0 0; }
+    100% { background-position: 40px 40px; }
+  }
+  
+  @keyframes data-flow {
+    0% { background-position: 0 0; }
+    100% { background-position: 20px 20px; } /* Diagonal flow */
+  }
+  
+  @keyframes pulse-opacity {
+    0% { opacity: 0.05; }
+    50% { opacity: 0.12; }
+    100% { opacity: 0.05; }
+  }
+
+  @keyframes road-scroll {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 50px; }
+  }
+
+  /* Specific CSS Schematics for each Service */
+  
+  /* Land: Drifting Survey Grid (3D Terrain Feel) */
+  &#land .immersive-content::before { 
+    background-image: radial-gradient(var(--color-accent-gold) 1px, transparent 1px);
+    background-size: 30px 30px; /* Larger for perspective feel */
+    opacity: 0.08;
+    animation: grid-pan 20s linear infinite;
+  }
+  
+  /* Water: Flowing Data Stream */
+  &#water .immersive-content::before { 
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.03) 0px,
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px,
+      transparent 10px
+    );
+    opacity: 0.15;
+    animation: data-flow 10s linear infinite;
+  }
+  
+  /* Environmental: Breathing Eco-Data */
+  &#environmental .immersive-content::before { 
+    background-image: radial-gradient(rgba(255,255,255,0.1) 1.5px, transparent 1.5px);
+    background-size: 20px 20px;
+    opacity: 0.1;
+    animation: pulse-opacity 8s ease-in-out infinite;
+  }
+  
+  /* Public Infra: Rolling Highway Grid */
+  &#public .immersive-content::before { 
+    background-image: 
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.1;
+    animation: road-scroll 15s linear infinite;
+  }
+  
+  /* Permitting: Active Network Matrix */
+  &#permitting .immersive-content::before { 
+    background-image: 
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 100%;
+    opacity: 0.15;
+    /* No animation on x-axis pillars to keep stable look, maybe nice static contrast */
+  }
+
+  /* Hover State Interaction */
+  &:hover {
+    border-color: var(--color-accent-cyan);
+    box-shadow: 0 20px 50px -10px rgba(0, 200, 255, 0.15); /* Blue glow */
+    
+    .immersive-image img { 
+      transform: scale(1.03); 
+    }
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .immersive-section {
+      flex-direction: column; /* Stack on tablet/mobile */
+      height: auto; 
+    }
+    
+    .immersive-image {
+      flex: none; /* Unlock fixed width */ 
+      width: 100%; 
+      height: auto;
+      aspect-ratio: 1/1; /* Ensure square aspect ratio remains on mobile */
+      border-right: none;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .immersive-content { 
+      width: 100%; 
+      padding: 2.5rem 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .immersive-section { margin-bottom: 3rem; }
+    
+    .immersive-content { 
+      padding: 1.5rem; 
+      
+      .content-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        
+        .section-title { font-size: 2rem; }
+      }
+    }
+  }
+}
+
+/* Mobile Sidebar Handling */
+@media (max-width: 900px) {
+  .dashboard-layout {
+    display: block; /* Collapse grid */
+  }
+  
+  .service-sidebar {
+    display: none; /* Hide sidebar on mobile */
+  }
+  
+  .service-content {
+    padding: 6rem 1.5rem 2rem 1.5rem; /* Standard mobile padding */
+  }
+}
+

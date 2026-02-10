@@ -1,0 +1,200 @@
+<div class="dashboard-layout">
+  <!-- 1. Sticky Sidebar Navigation -->
+  <aside class="service-sidebar">
+    <div class="sidebar-title">SERVICES MENU</div>
+    <nav class="sidebar-nav">
+      <a href="#land" (click)="scrollToSection($event, 'land')">Land Development</a>
+      <a href="#water" (click)="scrollToSection($event, 'water')">Water Resources</a>
+      <a href="#environmental" (click)="scrollToSection($event, 'environmental')">Environmental</a>
+      <a href="#public" (click)="scrollToSection($event, 'public')">Public Infra</a>
+      <a href="#permitting" (click)="scrollToSection($event, 'permitting')">Permitting</a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <p>Need a custom solution?</p>
+      <a routerLink="/contact" class="btn-outline">Contact Us</a>
+    </div>
+  </aside>
+
+  <!-- 2. Main Content Feed -->
+  <main class="service-content">
+
+    <!-- Land Development -->
+    <section id="land" class="immersive-section" appAnimateOnScroll>
+      <!-- Visual Header -->
+      <div class="immersive-image" (click)="openService('land')">
+        <img src="/assets/images/services/land_future.png" alt="Land Development Site using Digital Terrain Models"
+          loading="lazy">
+        <div class="image-overlay"></div>
+      </div>
+      <!-- Data Folder -->
+      <div class="immersive-content">
+        <div class="content-header" data-id="LND-01">
+          <h2 class="section-title">LAND <span class="text-highlight">DEVELOPMENT</span></h2>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-description">
+            <p class="lead">From <strong>Drilling Permits</strong> to <strong>Compliance Review</strong>, we handle the
+              complexities. Our focus: Municipal Permitting, Site Review, Alignment Studies, and Vendor Coordination. We
+              ensure your land aligns with its highest potential using advanced SiteOps optimization.</p>
+          </div>
+
+          <!-- Technical Sidebar -->
+          <div class="feature-list">
+            <div class="feature-item">
+              <h3>Core Competencies</h3>
+              <p>
+                <span>Compliance Review</span>
+                <span>Alignment Studies</span>
+                <span>Vendor Coordination</span>
+                <span>Feasibility Analysis</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Water Resources -->
+    <section id="water" class="immersive-section" appAnimateOnScroll>
+      <div class="immersive-image" (click)="openService('water')">
+        <img src="/assets/images/services/water_future.png" alt="Water Resources CFD Simulation" loading="lazy">
+        <div class="image-overlay"></div>
+      </div>
+      <div class="immersive-content">
+        <div class="content-header" data-id="WTR-02">
+          <h2 class="section-title">WATER <span class="text-highlight">RESOURCES</span></h2>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-description">
+            <p class="lead">Water resources are a vital component of our planet's ecosystems. We provide <strong>smart
+                solutions</strong> for drinking water, irrigation, power generation, and recreational sustainability.
+              Our engineers use advanced CFD modeling to predict flows and mitigate flood risks effectively.</p>
+          </div>
+
+          <div class="feature-list">
+            <div class="feature-item">
+              <h3>Capabilities</h3>
+              <p>
+                <span>Hydraulic Modeling</span>
+                <span>Floodplain Management</span>
+                <span>Sustainable Drainage</span>
+                <span>CLOMR/LOMR</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Environmental -->
+    <section id="environmental" class="immersive-section" appAnimateOnScroll>
+      <div class="immersive-image" (click)="openService('environmental')">
+        <img src="/assets/images/services/environmental_future.png" alt="Environmental Sustainability Data"
+          loading="lazy">
+        <div class="image-overlay"></div>
+      </div>
+      <div class="immersive-content">
+        <div class="content-header" data-id="ENV-03">
+          <h2 class="section-title">ENVIRONMENTAL <span class="text-highlight">STEWARDSHIP</span></h2>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-description">
+            <p class="lead">We are committed to revolutionizing the way we interact with our environment. With a strong
+              emphasis on sustainability and ecological preservation, we strive to create a greener and more harmonious
+              world for future generations, ensuring all projects meet stringent environmental impact standards.</p>
+          </div>
+
+          <div class="feature-list">
+            <div class="feature-item">
+              <h3>Focus Areas</h3>
+              <p>
+                <span>Impact Assessment (EIA)</span>
+                <span>Sustainability Planning</span>
+                <span>Wetland Preservation</span>
+                <span>Regulatory Compliance</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Public Infrastructure -->
+    <section id="public" class="immersive-section" appAnimateOnScroll>
+      <div class="immersive-image" (click)="openService('public')">
+        <img src="/assets/images/services/public_future.png" alt="Smart City Infrastructure Design" loading="lazy">
+        <div class="image-overlay"></div>
+      </div>
+      <div class="immersive-content">
+        <div class="content-header" data-id="PUB-04">
+          <h2 class="section-title">TRANSPORTATION <span class="text-highlight">& INFRASTRUCTURE</span></h2>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-description">
+            <p class="lead">Whether commuting to work or exploring a new city, we provide reliable and efficient
+              transportation solutions. We ensure a safe, modern experience for every passenger, integrating smart city
+              technologies into traditional roadway design.</p>
+          </div>
+
+          <div class="feature-list">
+            <div class="feature-item">
+              <h3>Connectivity</h3>
+              <p>
+                <span>Roadway Design</span>
+                <span>Traffic Control</span>
+                <span>Urban Mobility</span>
+                <span>Utility Relocation</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Permitting -->
+    <section id="permitting" class="immersive-section" appAnimateOnScroll>
+      <div class="immersive-image" (click)="openService('permitting')">
+        <img src="/assets/images/services/permitting_future.png" alt="Permitting Map Network" loading="lazy">
+        <div class="image-overlay"></div>
+      </div>
+      <div class="immersive-content">
+        <div class="content-header" data-id="PRM-05">
+          <h2 class="section-title">PERMITTING <span class="text-highlight">EXPEDITING</span></h2>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-description">
+            <p class="lead">RCE offers rapid permit expediting services, securing approvals through regulating agencies
+              across Texas. We cut through the red tape so you can build, leveraging our deep relationships with city
+              and county officials.</p>
+          </div>
+
+          <div class="feature-list">
+            <div class="feature-item">
+              <h3>Authorized Agencies</h3>
+              <p style="font-size: 0.95rem; line-height: 1.6;">
+                <span>San Antonio</span>
+                <span>SAWS & TxDOT</span>
+                <span>Bexar County</span>
+                <span>Austin & Houston</span>
+                <span>Harris County</span>
+                <span>New Braunfels</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Interactive Modal -->
+  @if (selectedService) {
+  <app-service-modal [data]="selectedService" (onClose)="closeService()"></app-service-modal>
+  }
+</div>

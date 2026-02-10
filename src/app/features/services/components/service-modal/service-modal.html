@@ -1,0 +1,43 @@
+<div class="modal-overlay" (click)="close()">
+  <div class="modal-dossier" (click)="$event.stopPropagation()">
+
+    <!-- Header: Identity & Close -->
+    <header class="dossier-header">
+      <div class="header-content">
+        <h2 class="title">{{ data.title }}</h2>
+        <p class="tagline">{{ data.tagline }}</p>
+      </div>
+      <button class="btn-close" (click)="close()">
+        <span class="icon">×</span>
+      </button>
+    </header>
+
+    <!-- 3D Visualization: Project Timeline -->
+    <div class="timeline-visual">
+      <div class="timeline-track">
+        @for (node of data.timeline; track node.phase) {
+        <div class="timeline-node">
+          <div class="node-point"></div>
+          <div class="node-label">{{ node.phase }}</div>
+          <div class="node-duration">{{ node.duration }}</div>
+        </div>
+        }
+      </div>
+    </div>
+
+    <!-- Deep Content: The Strategy -->
+    <div class="dossier-body">
+      <div class="strategy-grid">
+        <div class="strategy-col">
+          <h3>The Challenge</h3>
+          <p>{{ data.challenge }}</p>
+        </div>
+        <div class="strategy-col solution">
+          <h3>Our Strategy</h3>
+          <p>{{ data.solution }}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
