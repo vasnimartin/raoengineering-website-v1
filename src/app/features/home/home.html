@@ -31,6 +31,13 @@
   </div>
 </section>
 
+<!-- Landscape Blueprint Background Layer (starts after Hero) -->
+<div class="blueprint-landscape-layer" aria-hidden="true">
+  <div class="blueprint-grid"></div>
+  <div class="blueprint-compass-motif"></div>
+  <div class="blueprint-technical-marks"></div>
+</div>
+
 <!-- Why Us Section -->
 <section class="section why-us" appAnimateOnScroll>
   <div class="container">
@@ -99,61 +106,100 @@
 
 <!-- Services Section -->
 <section class="section services-section">
-  <div class="services-grid">
-    <!-- Land Development -->
-    <a routerLink="/services" fragment="land" class="service-card" appAnimateOnScroll class="delay-100">
-      <div class="card-bg bg-land cinematic-grade"></div>
-      <div class="card-overlay glass-panel">
+  <div class="container">
+    <div class="section-header" appAnimateOnScroll>
+      <h2 class="section-title">Our <span class="text-gold">Services</span></h2>
+      <p class="section-subtitle">Comprehensive civil engineering solutions for Texas development</p>
+    </div>
+
+    <div class="services-grid">
+      <!-- Land Development -->
+      <a routerLink="/services" fragment="land" class="service-card glass-panel" appAnimateOnScroll>
+        <div class="service-icon-wrapper">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+          </div>
+        </div>
         <h3>Land Development</h3>
         <p>Master planning, grading, and site feasibility for commercial & residential projects.</p>
-        <span class="btn-link">Explore &rarr;</span>
-      </div>
-    </a>
+        <span class="service-link">Explore →</span>
+      </a>
 
-    <!-- Water Resources -->
-    <a routerLink="/services" fragment="water" class="service-card" appAnimateOnScroll class="delay-200">
-      <div class="card-bg bg-water cinematic-grade"></div>
-      <div class="card-overlay glass-panel">
+      <!-- Water Resources -->
+      <a routerLink="/services" fragment="water" class="service-card glass-panel" appAnimateOnScroll>
+        <div class="service-icon-wrapper">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+            </svg>
+          </div>
+        </div>
         <h3>Water Resources</h3>
         <p>Drainage studies, CLOMR/LOMR, and detention design.</p>
-        <span class="btn-link">Explore &rarr;</span>
-      </div>
-    </a>
+        <span class="service-link">Explore →</span>
+      </a>
 
-    <!-- Environmental -->
-    <a routerLink="/services" fragment="environmental" class="service-card" appAnimateOnScroll class="delay-300">
-      <div class="card-bg bg-land cinematic-grade" style="filter: hue-rotate(90deg);"></div>
-      <!-- Reusing asset with hue shift for now or use specific -->
-      <div class="card-overlay glass-panel">
+      <!-- Environmental -->
+      <a routerLink="/services" fragment="environmental" class="service-card glass-panel" appAnimateOnScroll>
+        <div class="service-icon-wrapper">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+              <path d="M12 6v6l4 2" />
+            </svg>
+          </div>
+        </div>
         <h3>Environmental</h3>
         <p>Sustainable design and ecological preservation.</p>
-        <span class="btn-link">Explore &rarr;</span>
-      </div>
-    </a>
+        <span class="service-link">Explore →</span>
+      </a>
 
-    <!-- Public Infrastructure -->
-    <a routerLink="/services" fragment="public" class="service-card" appAnimateOnScroll class="delay-100">
-      <div class="card-bg bg-public cinematic-grade"></div>
-      <div class="card-overlay glass-panel">
+      <!-- Public Infrastructure -->
+      <a routerLink="/services" fragment="public" class="service-card glass-panel" appAnimateOnScroll>
+        <div class="service-icon-wrapper">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 12h20" />
+              <path d="M2 7h20" />
+              <path d="M2 17h20" />
+              <circle cx="7" cy="12" r="1" />
+              <circle cx="17" cy="12" r="1" />
+            </svg>
+          </div>
+        </div>
         <h3>Public Infrastructure</h3>
         <p>Roadway design and utility coordination.</p>
-        <span class="btn-link">Explore &rarr;</span>
-      </div>
-    </a>
+        <span class="service-link">Explore →</span>
+      </a>
 
-    <!-- Permitting (Highlight) -->
-    <a routerLink="/services" fragment="permitting" class="service-card highlight-card" appAnimateOnScroll
-      class="delay-200">
-      <div class="card-bg bg-public cinematic-grade" style="filter: sepia(1);"></div>
-      <div class="card-overlay glass-panel">
+      <!-- Permitting Expediting -->
+      <a routerLink="/services" fragment="permitting" class="service-card glass-panel highlight-card"
+        appAnimateOnScroll>
+        <div class="service-icon-wrapper">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="9" y1="15" x2="15" y2="15" />
+            </svg>
+          </div>
+        </div>
         <h3>Permitting Expediting</h3>
         <p>Rapid approvals with San Antonio, Austin, Houston, and TxDOT.</p>
-        <span class="btn-link">Get Approved Fast &rarr;</span>
-      </div>
-    </a>
-  </div>
+        <span class="service-link">Get Approved Fast →</span>
+      </a>
+    </div>
 
-  <div class="center-btn">
-    <a routerLink="/services" class="btn-outline">View All Services</a>
+    <div class="center-btn">
+      <a routerLink="/services" class="btn-outline">View All Services</a>
+    </div>
   </div>
 </section>
