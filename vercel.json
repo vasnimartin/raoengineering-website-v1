@@ -1,0 +1,6 @@
+{
+  "buildCommand": "ng build",
+  "outputDirectory": "dist/rce-app/browser",
+  "installCommand": "npm install --legacy-peer-deps",
+  "framework": "angular"
+}
